@@ -4,7 +4,7 @@
   "chamada": "Corte, barba e navalha quente. Marque pelo site em menos de um minuto.",
   "sobre": "Sete cadeiras de couro verde, toalha quente e barbeiros que conhecem o seu corte pelo nome. Atendemos com hora marcada para você não esperar em pé.",
   "aviso": {
-    "ativo": true,
+    "ativo": false,
     "texto": "Sábado, 21/11, abrimos só à tarde (13h às 19h)."
   },
   "endereco": "Rua das Flores, 120",

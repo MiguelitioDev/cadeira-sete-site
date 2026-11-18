@@ -30,3 +30,6 @@ posts/
 
 # Caixa de entrada local de pedidos com prints (não vai para o GitHub)
 alterações prints/
+
+.vercel
+.env*

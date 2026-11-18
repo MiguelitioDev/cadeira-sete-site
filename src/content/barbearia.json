@@ -1,0 +1,24 @@
+{
+  "nome": "Cadeira Sete",
+  "complemento": "Barbearia",
+  "chamada": "Corte, barba e navalha quente. Marque pelo site em menos de um minuto.",
+  "sobre": "Sete cadeiras de couro verde, toalha quente e barbeiros que conhecem o seu corte pelo nome. Atendemos com hora marcada para você não esperar em pé.",
+  "aviso": { "ativo": false, "texto": "Sábado, 21/11, abrimos só à tarde (13h às 19h)." },
+  "endereco": "Rua das Flores, 120",
+  "bairro": "Centro",
+  "cidade": "Aquiraz, CE",
+  "mapsUrl": "https://maps.google.com/?q=Aquiraz,CE",
+  "whatsapp": "5585999990000",
+  "instagram": "cadeirasete.barbearia",
+  "intervaloMinutos": 20,
+  "antecedenciaDias": 14,
+  "horarios": [
+    { "dia": 0, "aberto": false, "abre": "09:00", "fecha": "13:00" },
+    { "dia": 1, "aberto": true, "abre": "09:00", "fecha": "19:00" },
+    { "dia": 2, "aberto": true, "abre": "09:00", "fecha": "19:00" },
+    { "dia": 3, "aberto": true, "abre": "09:00", "fecha": "19:00" },
+    { "dia": 4, "aberto": true, "abre": "09:00", "fecha": "20:00" },
+    { "dia": 5, "aberto": true, "abre": "09:00", "fecha": "20:00" },
+    { "dia": 6, "aberto": true, "abre": "08:00", "fecha": "17:00" }
+  ]
+}

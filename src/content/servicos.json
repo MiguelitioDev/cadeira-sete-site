@@ -1,0 +1,50 @@
+[
+  {
+    "id": "corte",
+    "nome": "Corte",
+    "descricao": "Máquina e tesoura, lavagem e finalização.",
+    "preco": 45,
+    "duracaoMinutos": 40,
+    "ativo": true
+  },
+  {
+    "id": "barba",
+    "nome": "Barba na navalha",
+    "descricao": "Toalha quente, navalha e balm.",
+    "preco": 35,
+    "duracaoMinutos": 30,
+    "ativo": true
+  },
+  {
+    "id": "corte-barba",
+    "nome": "Corte e barba",
+    "descricao": "O combo completo, com toalha quente.",
+    "preco": 70,
+    "duracaoMinutos": 60,
+    "ativo": true
+  },
+  {
+    "id": "pezinho",
+    "nome": "Pezinho e sobrancelha",
+    "descricao": "Acabamento entre um corte e outro.",
+    "preco": 20,
+    "duracaoMinutos": 20,
+    "ativo": true
+  },
+  {
+    "id": "infantil",
+    "nome": "Corte infantil",
+    "descricao": "Até 10 anos, com paciência de sobra.",
+    "preco": 35,
+    "duracaoMinutos": 40,
+    "ativo": true
+  },
+  {
+    "id": "pigmentacao",
+    "nome": "Pigmentação de barba",
+    "descricao": "Preenche falhas e uniformiza a cor.",
+    "preco": 40,
+    "duracaoMinutos": 40,
+    "ativo": false
+  }
+]

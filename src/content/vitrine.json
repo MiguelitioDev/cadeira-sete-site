@@ -1,0 +1,88 @@
+{
+  "google": {
+    "nota": 4.9,
+    "avaliacoes": 312,
+    "url": "https://maps.google.com/?q=Aquiraz,CE"
+  },
+  "depoimentos": [
+    {
+      "id": "marcos",
+      "nome": "Marcos V.",
+      "texto": "Marquei pelo site no almoço e sentei na cadeira às 18h em ponto. O Rafael acertou o degradê de primeira.",
+      "quando": "há 2 semanas"
+    },
+    {
+      "id": "lucas",
+      "nome": "Lucas A.",
+      "texto": "A barba com toalha quente do João vale cada real. Saí de lá parecendo outra pessoa.",
+      "quando": "há 1 mês"
+    },
+    {
+      "id": "fernando",
+      "nome": "Fernando R.",
+      "texto": "Levo meu filho de 6 anos e ele não quer cortar em outro lugar. Paciência de sobra com criança.",
+      "quando": "há 3 semanas"
+    },
+    {
+      "id": "diego",
+      "nome": "Diego S.",
+      "texto": "Sou do clube faz 4 meses. Corto a cada 15 dias e nunca mais esperei em pé.",
+      "quando": "há 5 dias"
+    }
+  ],
+  "galeria": [
+    { "id": "salao", "foto": "/images/galeria/salao.webp", "legenda": "O salão, com as cadeiras de couro" },
+    { "id": "degrade", "foto": "/images/galeria/degrade.webp", "legenda": "Degradê com risco na navalha" },
+    { "id": "cadeira", "foto": "/images/galeria/cadeira.webp", "legenda": "A cadeira sete" },
+    { "id": "barba", "foto": "/images/galeria/barba.webp", "legenda": "Barba alinhada na tesoura" },
+    { "id": "bancada", "foto": "/images/galeria/bancada.webp", "legenda": "Pomadas e ferramentas da bancada" },
+    { "id": "corte", "foto": "/images/galeria/corte.webp", "legenda": "Acabamento do corte social" }
+  ],
+  "clube": {
+    "ativo": true,
+    "texto": "Pague uma vez por mês e corte quando quiser, sem pagar na hora. Cancela quando quiser, direto pelo WhatsApp.",
+    "planos": [
+      {
+        "id": "corte",
+        "nome": "Clube Corte",
+        "preco": 89,
+        "itens": ["Cortes à vontade, de segunda a quinta", "Pezinho e sobrancelha inclusos", "10% em pomadas e óleos"],
+        "destaque": false
+      },
+      {
+        "id": "completo",
+        "nome": "Clube Completo",
+        "preco": 139,
+        "itens": ["Corte e barba à vontade, de segunda a quinta", "Toalha quente em toda barba", "Horário reservado às sextas", "15% em pomadas e óleos"],
+        "destaque": true
+      },
+      {
+        "id": "barba",
+        "nome": "Clube Barba",
+        "preco": 69,
+        "itens": ["Barba na navalha à vontade, de segunda a quinta", "Pigmentação com 20% de desconto"],
+        "destaque": false
+      }
+    ]
+  },
+  "extras": [
+    {
+      "id": "noivo",
+      "titulo": "Dia do Noivo",
+      "texto": "Corte, barba, limpeza de pele e a cadeira só para você e os padrinhos, com bebida gelada.",
+      "chamada": "Montar o Dia do Noivo"
+    },
+    {
+      "id": "presente",
+      "titulo": "Cartão-presente",
+      "texto": "Dê um corte ou um mês de clube de presente. Enviamos o cartão pelo WhatsApp, pronto para encaminhar.",
+      "chamada": "Pedir um cartão-presente"
+    },
+    {
+      "id": "fidelidade",
+      "titulo": "10º corte por nossa conta",
+      "texto": "Cada visita conta no seu cartão fidelidade. No décimo corte, você não paga.",
+      "chamada": "Ver meu cartão fidelidade"
+    }
+  ]
+}

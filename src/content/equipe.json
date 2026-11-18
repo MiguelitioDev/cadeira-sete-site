@@ -1,0 +1,41 @@
+[
+  {
+    "id": "rafael",
+    "nome": "Rafael",
+    "especialidade": "Degradê e navalhado",
+    "bio": "Oito anos de máquina na mão. Faz degradê do zero ao topete e desenha risco na navalha sem molde.",
+    "foto": "/images/equipe/rafael.webp",
+    "portfolio": [
+      { "foto": "/images/portfolio/rafael-1.webp" },
+      { "foto": "/images/portfolio/rafael-2.webp" },
+      { "foto": "/images/portfolio/rafael-3.webp" }
+    ],
+    "ativo": true
+  },
+  {
+    "id": "joao",
+    "nome": "João Pedro",
+    "especialidade": "Barba e toalha quente",
+    "bio": "O ritual completo: toalha quente, navalha e balm. Quem vem pela barba costuma sair cliente do clube.",
+    "foto": "/images/equipe/joao.webp",
+    "portfolio": [
+      { "foto": "/images/portfolio/joao-1.webp" },
+      { "foto": "/images/portfolio/joao-2.webp" },
+      { "foto": "/images/portfolio/joao-3.webp" }
+    ],
+    "ativo": true
+  },
+  {
+    "id": "caio",
+    "nome": "Caio",
+    "especialidade": "Tesoura e cortes clássicos",
+    "bio": "Social, militar e corte infantil na tesoura. É o barbeiro que as crianças pedem pelo nome.",
+    "foto": "/images/equipe/caio.webp",
+    "portfolio": [
+      { "foto": "/images/portfolio/caio-1.webp" },
+      { "foto": "/images/portfolio/caio-2.webp" },
+      { "foto": "/images/portfolio/caio-3.webp" }
+    ],
+    "ativo": true
+  }
+]

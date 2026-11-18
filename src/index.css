@@ -1,0 +1,276 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/big-shoulders-display';
+@import '@fontsource-variable/hanken-grotesk';
+
+@theme {
+  --font-sans: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-placa: 'Big Shoulders Display Variable', 'Arial Narrow', sans-serif;
+
+  /* Materiais de barbearia: couro verde, latão, azulejo, tinta e a faixa vermelha do poste. */
+  --color-couro: #1f3b33;
+  --color-couro-escuro: #15291f;
+  --color-couro-claro: #2c5246;
+  --color-latao: #b8893b;
+  --color-latao-claro: #d9b46a;
+  --color-azulejo: #e8ece7;
+  --color-azulejo-escuro: #d3dbd4;
+  --color-tinta: #15201c;
+  --color-poste: #b5322b;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-azulejo);
+  color: var(--color-tinta);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Rejunte do azulejo: grade fina, só em superfícies claras grandes. */
+.azulejo {
+  background-color: var(--color-azulejo);
+  background-image:
+    linear-gradient(to right, rgb(21 32 28 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(21 32 28 / 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Faixa do poste de barbeiro: o único ornamento recorrente. */
+.poste {
+  background: repeating-linear-gradient(-45deg, var(--color-poste) 0 10px, #f4f6f3 10px 20px, var(--color-couro) 20px 30px, #f4f6f3 30px 40px);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-latao-claro);
+  outline-offset: 2px;
+}
+
+dialog::backdrop {
+  background: rgb(21 32 28 / 0.6);
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+/* Poste giratório: as listras sobem pelo tubo e a sombra lateral dá volume de cilindro. */
+@keyframes girar-poste {
+  to { background-position: 0 -56.57px; }
+}
+.poste-animado {
+  position: relative;
+  background-size: 56.57px 56.57px;
+  animation: girar-poste 1.6s linear infinite;
+}
+.poste-animado::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    rgb(0 0 0 / 0.45) 0%,
+    rgb(0 0 0 / 0.08) 22%,
+    rgb(255 255 255 / 0.35) 38%,
+    rgb(255 255 255 / 0) 52%,
+    rgb(0 0 0 / 0.12) 72%,
+    rgb(0 0 0 / 0.5) 100%
+  );
+  box-shadow: inset 0 0 0 3px rgb(184 137 59 / 0.55);
+}
+.poste-tampa {
+  background: linear-gradient(to right, #7a5a22, var(--color-latao-claro) 40%, #f2dca6 50%, var(--color-latao) 70%, #6b4e1c);
+}
+
+/* Ferramentas de barbeiro ao fundo, balançando devagar. */
+@keyframes balanco {
+  0%, 100% { transform: translateY(0) rotate(calc(var(--giro, 8deg) * -1)); }
+  50% { transform: translateY(-10px) rotate(var(--giro, 8deg)); }
+}
+.ferramenta {
+  animation: balanco var(--dur, 8s) ease-in-out var(--atraso, 0s) infinite;
+  will-change: transform;
+}
+/* ─── Movimento da página ───
+   Curvas da skill animate: entrada ease-out forte; saída mais curta. Só transform e opacity. */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Revelar ao rolar: só esconde quando o JS está ativo (sem JS, tudo aparece). */
+.js-revelar .revelar {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+.js-revelar .revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+/* Títulos de seção: o filete do poste se desenha da esquerda para a direita. */
+.filete {
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.9s var(--ease-out) 0.15s;
+}
+.visivel .filete,
+.visivel.filete {
+  transform: scaleX(1);
+}
+
+/* Toque em botões: afunda um pouco, como botão físico. */
+.pressionar {
+  transition:
+    transform 120ms ease-out,
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+.pressionar:active {
+  transform: scale(0.97);
+}
+
+/* Links do menu: sublinhado que corre. */
+.link-menu {
+  position: relative;
+}
+.link-menu::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -6px;
+  height: 2px;
+  background: var(--color-latao-claro);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s var(--ease-out);
+}
+.link-menu:hover::after,
+.link-menu:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (hover: hover) {
+  .elevar {
+    transition:
+      transform 0.3s var(--ease-out),
+      box-shadow 0.3s var(--ease-out);
+  }
+  .elevar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px -18px rgb(21 32 28 / 0.45);
+  }
+  .zoom img {
+    transition: transform 0.7s var(--ease-out);
+  }
+  .zoom:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Estrelas da nota: enchem quando a seção aparece. */
+.estrelas-cheias {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.1s var(--ease-out) 0.3s;
+}
+.visivel .estrelas-cheias {
+  clip-path: inset(0 var(--falta, 0%) 0 0);
+}
+
+/* Gaveta do agendamento entra pela direita; modal sobe do rodapé. */
+@keyframes gaveta-entra {
+  from { transform: translateX(100%); }
+}
+@keyframes modal-entra {
+  from { opacity: 0; transform: translateY(28px) scale(0.98); }
+}
+@keyframes esmaecer {
+  from { opacity: 0; }
+}
+dialog.gaveta[open] {
+  animation: gaveta-entra 0.38s var(--ease-out);
+}
+dialog.modal[open] {
+  animation: modal-entra 0.34s var(--ease-out);
+}
+dialog[open]::backdrop {
+  animation: esmaecer 0.3s ease-out;
+}
+
+/* Troca de etapa dentro do agendamento. */
+@keyframes passo-entra {
+  from { opacity: 0; transform: translateX(16px); }
+}
+.passo {
+  animation: passo-entra 0.3s var(--ease-out);
+}
+
+/* Botão de WhatsApp: um aceno a cada 6 s para lembrar que existe, sem piscar. */
+@keyframes aceno {
+  0%, 88%, 100% { transform: none; }
+  91% { transform: rotate(-12deg) scale(1.06); }
+  94% { transform: rotate(10deg) scale(1.06); }
+  97% { transform: rotate(-4deg); }
+}
+.aceno {
+  animation: aceno 6s ease-in-out 2s infinite;
+}
+
+.entrada > * {
+  animation: subir 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.entrada > *:nth-child(2) { animation-delay: 0.08s; }
+.entrada > *:nth-child(3) { animation-delay: 0.16s; }
+.entrada > *:nth-child(4) { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  /* Movimento ambiente e lento continua (é a assinatura da casa), só que mais calmo. */
+  .poste-animado {
+    animation-duration: 3.2s !important;
+    animation-iteration-count: infinite !important;
+  }
+  /* Sem deslocamento: o que entrava deslizando agora só esmaece. */
+  .js-revelar .revelar {
+    transform: none;
+    transition: opacity 0.6s ease !important;
+    transition-delay: calc(var(--i, 0) * 60ms) !important;
+  }
+  .filete,
+  .estrelas-cheias {
+    transition: none !important;
+  }
+  dialog.gaveta[open],
+  dialog.modal[open],
+  .passo {
+    animation: esmaecer 0.25s ease-out both !important;
+  }
+  .aceno {
+    animation: none;
+  }
+  .ferramenta {
+    --giro: 4deg;
+    animation-duration: calc(var(--dur, 8s) * 1.6) !important;
+    animation-iteration-count: infinite !important;
+  }
+}

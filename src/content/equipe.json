@@ -55,14 +55,5 @@
       }
     ],
     "ativo": true
-  },
-  {
-    "id": "barbeiro",
-    "nome": "Prililila",
-    "especialidade": "Pripipi Parapipi lalala",
-    "bio": "Lalilalo lullailol nimiimimi mauninanoi",
-    "foto": "/images/equipe/barbeiro-mwo550roctus.webp",
-    "portfolio": [],
-    "ativo": true
   }
 ]
